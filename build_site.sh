@@ -1,5 +1,5 @@
 #!/bin/sh
-# Собирает site/index.html для GitHub Pages из index.html (тот же код, что в артефакте) + шапка для «экрана Домой».
+# Собирает docs/index.html для GitHub Pages из index.html (тот же код, что в артефакте) + шапка для «экрана Домой».
 cd "$(dirname "$0")"
 {
 cat <<'HEAD'
@@ -19,7 +19,7 @@ cat <<'HEAD'
 HEAD
 cat index.html
 printf '\n</html>\n'
-} > site/index.html
-cat > site/manifest.json <<'JSON'
+} > docs/index.html
+cat > docs/manifest.json <<'JSON'
 {"name":"Футбол трёх команд","short_name":"Футбол","start_url":".","display":"standalone","background_color":"#EEF2EE","theme_color":"#EEF2EE","icons":[{"src":"icon-180.png","sizes":"180x180","type":"image/png"},{"src":"icon-512.png","sizes":"512x512","type":"image/png"}]}
 JSON
